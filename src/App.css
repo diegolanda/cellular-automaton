@@ -1,38 +1,54 @@
-.App {
-  text-align: center;
+body {
+  padding: 20px;
+  background-color: #444;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#gridContainer {
+  padding-bottom: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+table {
+  border-spacing: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+td {
+  width: 10px;
+  height: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+span {
+  color: #222;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#start,
+#clear,
+#random {
+  padding: .75em;
+  border-radius: 5px;
+  border: none;    
+  background: linear-gradient(
+      to bottom right,
+      #C5DEC6, #587559);
+}
+
+td.cell_land {
+  background-color: blanchedalmond;
+}
+
+td.cell_dead {
+  background-color: lightblue;
+  background-image: url('./resources//images/water.gif');
+  background-size: cover;
+}
+
+td.cell_grass {
+  background-color: greenyellow;
+  background-image: url('./resources//images/grass.gif');
+  background-size: cover;
+}
+
+td.cell_tree {
+  background-color: green;
+  background-image: url('./resources//images/tree.gif');
+  background-size: cover;
 }

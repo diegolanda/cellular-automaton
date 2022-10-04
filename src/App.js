@@ -1,23 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
+import { useEffect } from 'react'
+import { useGrids } from './hooks/useGrid'
+import { Controls } from './components/Controls'
 
 function App() {
+  const [data, grid] = useGrids()
+
+  useEffect(() => {
+    
+  }, [data.grid])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Controls grid={data.grid} rows={data.rows} cols={data.cols} onMakeNoise={grid.updateGrid} onNextClick={grid.nextState}/>
+      <div id="gridContainer">
+        {grid.renderTable()}
+      </div>
     </div>
   );
 }
